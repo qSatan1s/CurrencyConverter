@@ -68,7 +68,8 @@ export default defineComponent({
     watch(
       () => secondCurrency.value,
       () => {
-        calculateSecondAmount("second");
+        // calculateSecondAmount("second");
+        calculateSecondAmount("first");
       }
     );
 
