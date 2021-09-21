@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#app {
+    font-family: "Roboto", serif;
+}
+
+
+body {
+    background: gray;
+    padding: 20px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.active {
+    color: #0e410e;
+}
+
+.active:hover {
+     opacity: 1;
+
+}
