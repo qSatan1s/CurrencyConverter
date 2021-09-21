@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="nav">
-      <router-link exact active-class="active" to="/"> Все валюты </router-link>
+      <router-link exact active-class="active" to="/">Список валют</router-link>
       <router-link active-class="active" to="/currencyConverter">
         Конвертер валют
       </router-link>
