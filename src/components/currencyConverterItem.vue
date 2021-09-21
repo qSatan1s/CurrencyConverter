@@ -3,7 +3,7 @@
     <h6 class="currencyBlockItem__title">{{ currency?.Name }}</h6>
     <div class="currencyConverterItem__block">
       <AppSelect v-model="selectOption" :options="valutes" />
-      <input v-model="inputItem" type="Number" />
+      <input :readonly="readonly" v-model="inputItem" type="Number" />
     </div>
   </div>
 </template>
@@ -24,6 +24,10 @@ export default defineComponent({
       type: Object,
       required: true,
       default: () => {},
+    },
+    readonly: {
+      type: Boolean,
+      default: false,
     },
     currency: { type: Object },
   },

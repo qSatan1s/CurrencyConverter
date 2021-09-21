@@ -13,6 +13,7 @@
         v-model:value="secondAmount"
         v-model:currency="secondCurrency"
         :valutes="results"
+        readonly="readonly"
       />
     </div>
   </section>
@@ -58,12 +59,12 @@ export default defineComponent({
       }
     );
 
-    watch(
-      () => secondAmount.value,
-      () => {
-        calculateSecondAmount("second");
-      }
-    );
+    // watch(
+    //   () => secondAmount.value,
+    //   () => {
+    //     calculateSecondAmount("second");
+    //   }
+    // );
     watch(
       () => secondCurrency.value,
       () => {
