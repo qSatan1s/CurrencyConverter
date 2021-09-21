@@ -9,13 +9,13 @@
       />
       <div class="currencyBlock__container">
         <currencyBlockItem
-          v-for="valute in results"
-          :key="valute.ID"
-          :CharCode="valute.CharCode"
-          :Name="valute.Name"
-          :Value="valute.Value"
-          :Nominal="valute.Nominal"
-          :Previous="valute.Previous"
+          v-for="currencyItem in results"
+          :key="currencyItem.ID"
+          :CharCode="currencyItem.CharCode"
+          :Name="currencyItem.Name"
+          :Value="currencyItem.Value"
+          :Nominal="currencyItem.Nominal"
+          :Previous="currencyItem.Previous"
         />
       </div>
     </div>
