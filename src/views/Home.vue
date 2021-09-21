@@ -7,15 +7,17 @@
         type="text"
         v-model="searchValue"
       />
-      <currencyBlockItem
-        v-for="valute in results"
-        :key="valute.ID"
-        :CharCode="valute.CharCode"
-        :Name="valute.Name"
-        :Value="valute.Value"
-        :Nominal="valute.Nominal"
-        :Previous="valute.Previous"
-      />
+      <div class="currencyBlock__container">
+        <currencyBlockItem
+          v-for="valute in results"
+          :key="valute.ID"
+          :CharCode="valute.CharCode"
+          :Name="valute.Name"
+          :Value="valute.Value"
+          :Nominal="valute.Nominal"
+          :Previous="valute.Previous"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -90,8 +92,11 @@ export default defineComponent({
   position: relative;
   margin: 0 20px;
   width: 400px;
-  max-height: 100%;
-  overflow-y: auto;
+}
+
+.currencyBlock__container {
+  max-height: 600px;
+  overflow: auto;
 }
 
 .currencyBlock--input {
