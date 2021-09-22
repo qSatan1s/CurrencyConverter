@@ -91,19 +91,13 @@ export default defineComponent({
         ).toFixed(1);
     };
 
-    onMounted(() => {
+    onMounted(async () => {
       if (Object.keys(store.state.listCurrencies).length === 0) {
-        store.dispatch("getListCurrencies");
-        setTimeout(() => {
-          results.value = listCurrencies.value.Valute;
-          firstCurrency.value = results.value.USD;
-          secondCurrency.value = results.value.EUR;
-        }, 200);
-      } else {
-        results.value = listCurrencies.value.Valute;
-        firstCurrency.value = results.value.USD;
-        secondCurrency.value = results.value.EUR;
+        await store.dispatch("getListCurrencies");
       }
+      results.value = listCurrencies.value.Valute;
+      firstCurrency.value = results.value.USD;
+      secondCurrency.value = results.value.EUR;
     });
     return {
       firstCurrency,
