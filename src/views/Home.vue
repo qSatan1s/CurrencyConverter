@@ -1,6 +1,7 @@
 <template>
   <section class="allCurrencies">
-    <div class="currencyBlock">
+    <loader v-if="Object.keys(results).length === 0" />
+    <div v-else class="currencyBlock">
       <input
         placeholder="введите название валюты"
         class="currencyBlock--input"
@@ -26,12 +27,14 @@
 import { defineComponent, onMounted, computed, watch, ref } from "vue";
 import { useStore } from "vuex";
 
+import loader from "../components/utils/loader";
 import currencyBlockItem from "../components/currencyBlockItem";
 
 export default defineComponent({
   name: "Home",
   components: {
     currencyBlockItem,
+    loader,
   },
   setup() {
     const store = useStore();
