@@ -64,15 +64,11 @@ export default defineComponent({
       }
     };
 
-    onMounted(() => {
+    onMounted(async () => {
       if (Object.keys(store.state.listCurrencies).length === 0) {
-        store.dispatch("getListCurrencies");
-        setTimeout(() => {
-          results.value = listCurrencies.value.Valute;
-        }, 200);
-      } else {
-        results.value = listCurrencies.value.Valute;
+        await store.dispatch("getListCurrencies");
       }
+      results.value = listCurrencies.value.Valute;
     });
     return {
       listCurrencies,
