@@ -51,13 +51,14 @@ export default defineComponent({
     };
 
     watch(
-      () => firstCurrency.value,
+      () => firstAmount.value,
       () => {
         calculateSecondAmount("first");
       }
     );
+
     watch(
-      () => firstAmount.value,
+      () => firstCurrency.value,
       () => {
         calculateSecondAmount("first");
       }
