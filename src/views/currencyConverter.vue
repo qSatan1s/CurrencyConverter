@@ -1,7 +1,6 @@
 <template>
   <section class="currencyConverter">
-    <loader v-if="Object.keys(results).length === 0" />
-    <div v-else class="currencyConverterItem__container">
+    <div class="currencyConverterItem__container">
       <currencyConverterItem
         v-model:value="firstAmount"
         v-model:currency="firstCurrency"
@@ -25,13 +24,11 @@ import { computed, defineComponent, onMounted, ref, watch } from "vue";
 import { useStore } from "vuex";
 
 import currencyConverterItem from "../components/currencyConverterItem.vue";
-import loader from "../components/utils/loader";
 
 export default defineComponent({
   name: "currencyConverter",
   components: {
     currencyConverterItem,
-    loader,
   },
   setup() {
     const store = useStore();
